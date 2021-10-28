@@ -1,2 +1,5 @@
+# coding=utf-8
 print("Hello World")
-print("tamère")
+print("tamere")
+
+print("helloooo éé ca vaaaa ? ")
