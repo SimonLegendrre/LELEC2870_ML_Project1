@@ -2,6 +2,5 @@ import pandas as pd
 
 # import data set
 
-df = pd.read_csv('X1.csv')
-df.head()
-print(df.head())
+train = pd.read_csv('X1.csv')
+train_target = pd.read_csv('Y1.csv')
