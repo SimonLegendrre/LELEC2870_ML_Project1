@@ -8,38 +8,7 @@ explanatory_train = pd.read_csv('X1.csv')
 train_target = pd.read_csv('Y1.csv', header=None)
 train_target.columns = ["target"]
 
-# features selection for the linear regression
-# scat_plot_1
-x = explanatory_train['Age']
-y = train_target['target']
-
-stats = linregress(x, y)
-
-m = stats.slope
-b = stats.intercept
-
-plt.scatter(x, y)
-plt.title('target~age')
-plt.plot(x, m*x+b, color='red')
-plt.savefig("target_age.png")
-
-# scat_plot_2
-x = explanatory_train['Height']
-y = train_target['target']
-
-stats = linregress(x, y)
-
-m = stats.slope
-b = stats.intercept
-
-plt.scatter(x, y)
-plt.title('target~height')
-plt.plot(x, m*x+b, color='red')
-plt.savefig("target_height.png")
-
-
-# print(explanatory_train)
-
+# Data Cleaning :
 # Je modifie les variable catégorielle sous forme de nombre en mots compréhensibles, c'est mieux pour la suite
 
 # Création du dictionnaire
@@ -58,3 +27,32 @@ explanatory_train = pd.get_dummies(explanatory_train,
                                             "SMOKE", "CH2O", "SCC", "FAF", "TUE", "CALC", "MTRANS"],
                                    prefix=["Gender", "family_history_with_overweight", "FAVC", "FCVC", "NCP", "CAEC",
                                            "SMOKE", "CH2O", "SCC", "FAF", "TUE", "CALC", "MTRANS"])
+
+# features selection for the linear regression
+# scat_plot_1
+x = explanatory_train['Age']
+y = train_target['target']
+
+stats = linregress(x, y)
+
+m = stats.slope
+b = stats.intercept
+
+plt.scatter(x, y)
+plt.title('target~age')
+plt.plot(x, m * x + b, color='red')
+plt.savefig("target_age.png")
+
+# scat_plot_2
+x = explanatory_train['Height']
+y = train_target['target']
+
+stats = linregress(x, y)
+
+m = stats.slope
+b = stats.intercept
+
+plt.scatter(x, y)
+plt.title('target~height')
+plt.plot(x, m * x + b, color='red')
+plt.savefig("target_height.png")
