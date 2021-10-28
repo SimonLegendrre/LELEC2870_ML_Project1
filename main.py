@@ -56,3 +56,4 @@ plt.scatter(x, y)
 plt.title('target~height')
 plt.plot(x, m * x + b, color='red')
 plt.savefig("target_height.png")
+
