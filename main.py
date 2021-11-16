@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import linregress
 
+
 # import data set
 explanatory_train = pd.read_csv('X1.csv')
 train_target = pd.read_csv('Y1.csv', header=None)
@@ -57,3 +58,5 @@ plt.title('target~height')
 plt.plot(x, m * x + b, color='red')
 plt.savefig("target_height.png")
 
+
+# %%
